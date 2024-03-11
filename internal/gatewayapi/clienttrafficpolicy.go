@@ -490,7 +490,7 @@ func (t *Translator) translateListenerTLSParameters(policy *egv1a1.ClientTraffic
 	// If HTTP3 is enabled, the ALPN protocols array should be hardcoded
 	// for HTTP3
 	if httpIR.HTTP3 != nil {
-		httpIR.TLS.ALPNProtocols = []string{"h3"}
+		httpIR.TLS.ALPNProtocols = []string{"h3", "h2"}
 	} else if tlsParams != nil && len(tlsParams.ALPNProtocols) > 0 {
 		httpIR.TLS.ALPNProtocols = make([]string, len(tlsParams.ALPNProtocols))
 		for i := range tlsParams.ALPNProtocols {
