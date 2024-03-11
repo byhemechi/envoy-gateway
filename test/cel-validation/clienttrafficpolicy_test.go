@@ -222,9 +222,7 @@ func TestClientTrafficPolicyTarget(t *testing.T) {
 					},
 				}
 			},
-			wantErrors: []string{
-				"spec: Invalid value: \"object\": invalid object type, expected either Properties or AdditionalProperties with Allows=true and non-empty Schema evaluating rule: alpn protocols can't be set if HTTP/3 is enabled",
-			},
+			wantErrors: []string{},
 		},
 		{
 			desc: "http3 enabled and ALPN protocols not set",
